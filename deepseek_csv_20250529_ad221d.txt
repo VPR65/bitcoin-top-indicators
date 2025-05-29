@@ -1,0 +1,2 @@
+Fecha,Rainbow,AHR999,CBBI,PiCycle,BubbleIndex,MVRVZ,BullPeak,FearGreed,Puell,ReserveRisk
+2023-09-25,0.85,1.28,83,No cruce,67,2.85,35,65,1.80,0.15

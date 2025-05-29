@@ -1,0 +1,23 @@
+name: Actualización Bitcoin Chile
+
+on:
+  schedule:
+    - cron: '0 11,15,19,23 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with: { node-version: '18' }
+      - run: node update-data.js
+      - name: Commit cambios
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add datos.csv
+          git commit -m "Actualización automática" || echo "Sin cambios"
+          git push
